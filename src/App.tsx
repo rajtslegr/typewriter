@@ -1,29 +1,31 @@
-import { Session } from '@supabase/supabase-js';
-import React, { useEffect, useState } from 'react';
-import Account from './components/Account';
-import Auth from './components/Auth';
-import { supabase } from './supabaseClient';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import PrivateRoute from './components/ProtectedRoute';
+import Signup from './components/Signup';
+import AuthProvider from './contexts/Auth';
 
-const Home: React.FC = () => {
-  const [session, setSession] = useState<Session | null>(null);
-
-  useEffect(() => {
-    setSession(supabase.auth.session());
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-  }, []);
-
+const App: React.FC = () => {
   return (
-    <div className="container" style={{ padding: '50px 0 100px 0' }}>
-      {!session ? (
-        <Auth />
-      ) : (
-        <Account key={session?.user?.id} session={session} />
-      )}
+    <div>
+      <Router>
+        <AuthProvider>
+          <Switch>
+            <PrivateRoute exact path="/" component={Dashboard} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route render={() => <Redirect to="/" />} />
+          </Switch>
+        </AuthProvider>
+      </Router>
     </div>
   );
 };
 
-export default Home;
+export default App;
