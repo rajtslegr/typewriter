@@ -6,6 +6,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
+import Layout from './components/Layout';
 import Login from './components/Login';
 import PrivateRoute from './components/ProtectedRoute';
 import Signup from './components/Signup';
@@ -13,18 +14,18 @@ import AuthProvider from './contexts/Auth';
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Router>
-        <AuthProvider>
+    <Router>
+      <AuthProvider>
+        <Layout>
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route render={() => <Redirect to="/" />} />
           </Switch>
-        </AuthProvider>
-      </Router>
-    </div>
+        </Layout>
+      </AuthProvider>
+    </Router>
   );
 };
 
