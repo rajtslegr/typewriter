@@ -1,31 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
-import GlobalStyle from '../styles/Global';
-import Theme from '../styles/Theme';
 import Header from './Header';
-
-const SMain = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  margin: 12px auto;
-  padding: 12px;
-  color: ${({ theme }) => theme.colors.text};
-  font-size: 1.6rem;
-`;
 
 interface IProps {
   children: JSX.Element | JSX.Element[];
 }
 
 const Layout: React.FC<IProps> = ({ children }) => (
-  <Theme>
-    <GlobalStyle />
+  <div className="flex flex-col items-center min-h-screen">
     <Header />
-    <SMain>{children}</SMain>
-  </Theme>
+    <div className="flex-auto w-full pt-16 md:pt-24">
+      <main className="container px-4 py-6 mx-auto my-4 md:py-12 xl:w-5/6 2xl:w-2/3">
+        {children}
+      </main>
+    </div>
+  </div>
 );
 
 export default Layout;

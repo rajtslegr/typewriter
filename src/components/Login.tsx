@@ -1,12 +1,6 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import styled from 'styled-components';
 import { useAuth } from '../contexts/Auth';
-
-const SForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
 
 const Login: React.FC = () => {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -37,20 +31,22 @@ const Login: React.FC = () => {
   };
 
   return (
-    <SForm onSubmit={handleSubmit}>
-      <label htmlFor="input-email">Email</label>
-      <input id="input-email" type="email" ref={emailRef} />
+    <div className="flex flex-col items-center justify-center w-full">
+      <form onSubmit={handleSubmit} className="flex flex-col w-1/3">
+        <label htmlFor="input-email">Email</label>
+        <input id="input-email" type="email" ref={emailRef} />
 
-      <label htmlFor="input-password">Password</label>
-      <input id="input-password" type="password" ref={passwordRef} />
+        <label htmlFor="input-password">Password</label>
+        <input id="input-password" type="password" ref={passwordRef} />
 
-      <br />
+        <br />
 
-      <button type="submit">Login</button>
-      <p>
-        Don&apos;t have an account? <Link to="/signup">Sign Up</Link>
-      </p>
-    </SForm>
+        <button type="submit">Login</button>
+        <p>
+          Don&apos;t have an account? <Link to="/signup">Sign Up</Link>
+        </p>
+      </form>
+    </div>
   );
 };
 
