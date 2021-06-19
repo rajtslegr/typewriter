@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useAuth } from '../contexts/Auth';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Input from '../components/ui/Input';
+import { useAuth } from '../contexts/Auth';
 
 const LogIn: React.FC = () => {
   const { signIn, user } = useAuth();
@@ -39,7 +39,7 @@ const LogIn: React.FC = () => {
         <Input type="email" label="Email" ref={emailRef}></Input>
         <Input type="password" label="Password" ref={passwordRef} />
         {error && <Error>{error}</Error>}
-        <Button clicked={() => handleSubmit} type="submit" variant="dark">
+        <Button onClick={() => handleSubmit} type="submit" variant="dark">
           Log In
         </Button>
         <p>

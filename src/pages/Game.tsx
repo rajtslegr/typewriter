@@ -44,7 +44,7 @@ const Game: React.FC = () => {
       )}
       {!gameInProgress && !startedCountDown && (
         <Button
-          clicked={() => preparePlayGround()}
+          onClick={() => preparePlayGround()}
           type="button"
           variant="dark"
         >
