@@ -5,12 +5,13 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Layout from './components/Layout';
-import LogIn from './components/LogIn';
-import PrivateRoute from './components/ProtectedRoute';
-import SignUp from './components/SignUp';
+import ProtectedRoute from './components/ProtectedRoute';
+import Layout from './components/ui/Layout';
 import AuthProvider from './contexts/Auth';
+import Dashboard from './pages/Dashboard';
+import Game from './pages/Game';
+import LogIn from './pages/LogIn';
+import SignUp from './pages/SignUp';
 
 const App: React.FC = () => {
   return (
@@ -18,7 +19,8 @@ const App: React.FC = () => {
       <AuthProvider>
         <Layout>
           <Switch>
-            <PrivateRoute exact path="/" component={Dashboard} />
+            <ProtectedRoute exact path="/" component={Dashboard} />
+            <Route exact path="/game" component={Game} />
             <Route path="/signup" component={SignUp} />
             <Route path="/login" component={LogIn} />
             <Route render={() => <Redirect to="/" />} />

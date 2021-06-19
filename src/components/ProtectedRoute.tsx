@@ -9,7 +9,7 @@ interface PrivateRouteProps extends RouteProps {
   component: any;
 }
 
-const PrivateRoute = (props: PrivateRouteProps) => {
+const ProtectedRoute = (props: PrivateRouteProps) => {
   const { component: Component, ...rest } = props;
   const { user } = useAuth();
 
@@ -31,4 +31,4 @@ const PrivateRoute = (props: PrivateRouteProps) => {
   );
 };
 
-export default PrivateRoute;
+export default ProtectedRoute;

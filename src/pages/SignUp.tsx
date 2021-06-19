@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/Auth';
-import Button from './Button';
-import Error from './Error';
-import Input from './Input';
+import Button from '../components/ui/Button';
+import Error from '../components/ui/Error';
+import Input from '../components/ui/Input';
 
 const SignUp: React.FC = () => {
   const { signUp, user } = useAuth();

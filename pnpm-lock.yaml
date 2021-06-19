@@ -4,6 +4,7 @@ specifiers:
   '@supabase/supabase-js': ^1.15.1
   '@tailwindcss/forms': ^0.3.3
   '@tailwindcss/typography': ^0.4.1
+  '@types/faker': ^5.5.6
   '@types/node': ^15.12.4
   '@types/react': ^17.0.11
   '@types/react-dom': ^17.0.8
@@ -18,6 +19,7 @@ specifiers:
   eslint-plugin-prettier: ^3.4.0
   eslint-plugin-react: ^7.24.0
   eslint-plugin-react-hooks: ^4.2.0
+  faker: ^5.5.3
   postcss: ^8.3.5
   prettier: ^2.3.1
   react: ^17.0.2
@@ -31,7 +33,9 @@ dependencies:
   '@supabase/supabase-js': 1.15.1
   '@tailwindcss/forms': 0.3.3_tailwindcss@2.2.2
   '@tailwindcss/typography': 0.4.1_tailwindcss@2.2.2
+  '@types/faker': 5.5.6
   autoprefixer: 10.2.6_postcss@8.3.5
+  faker: 5.5.3
   postcss: 8.3.5
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -410,6 +414,10 @@ packages:
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       tailwindcss: 2.2.2_72be89de93206f86f2d67dd5290ec14d
+    dev: false
+
+  /@types/faker/5.5.6:
+    resolution: {integrity: sha512-UCRj0kLg4sXs2XFVm48OU/wIjyJZkpRkwxhRGVQb5l5GmemkeW22WTz9iiDhYPBUqTzDsIWzhFRuF/4DD5+q2Q==}
     dev: false
 
   /@types/history/4.7.8:
@@ -1317,6 +1325,10 @@ packages:
     resolution: {integrity: sha512-Key5NIsUxdqKg3vIsdw9dSuXpPCQ297y6wBjL30edxwPgt2E44WcWBZey/ZvUc6sERLTxKdyCu4gZFmUbk1Q7A==}
     dependencies:
       type: 2.5.0
+    dev: false
+
+  /faker/5.5.3:
+    resolution: {integrity: sha512-wLTv2a28wjUyWkbnX7u/ABZBkUkIF2fCd73V6P2oFqEGEktDfzWx4UxrSqtPRw0xPRAcjeAOIiJWqZm3pP4u3g==}
     dev: false
 
   /fast-deep-equal/3.1.3:
