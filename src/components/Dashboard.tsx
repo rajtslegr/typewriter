@@ -4,13 +4,10 @@ import { useAuth } from '../contexts/Auth';
 
 const Dashboard: React.FC = () => {
   const { user, signOut } = useAuth();
-
   const history = useHistory();
-  const handleSignOut = async (): Promise<void> => {
-    // Ends user session
-    await signOut();
 
-    // Redirects the user to Login page
+  const handleSignOut = async (): Promise<void> => {
+    await signOut();
     history.push('/login');
   };
 

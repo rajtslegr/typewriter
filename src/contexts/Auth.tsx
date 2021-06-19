@@ -40,13 +40,11 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check active sessions and sets the user
     const session = supabase.auth.session();
 
     setUser(session?.user ?? null);
     setLoading(false);
 
-    // Listen for changes on auth state (logged in, signed out, etc.)
     const { data: listener } = supabase.auth.onAuthStateChange(
       async (_event, session) => {
         setUser(session?.user ?? null);
@@ -59,7 +57,6 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
     };
   }, []);
 
-  // Will be passed down to Signup, Login and Dashboard components
   const value = {
     signUp: (data: UserCredentials) => supabase.auth.signUp(data),
     signIn: (data: UserCredentials) => supabase.auth.signIn(data),

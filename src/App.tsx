@@ -7,9 +7,9 @@ import {
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Layout from './components/Layout';
-import Login from './components/Login';
+import LogIn from './components/LogIn';
 import PrivateRoute from './components/ProtectedRoute';
-import Signup from './components/Signup';
+import SignUp from './components/SignUp';
 import AuthProvider from './contexts/Auth';
 
 const App: React.FC = () => {
@@ -19,8 +19,8 @@ const App: React.FC = () => {
         <Layout>
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/login" component={LogIn} />
             <Route render={() => <Redirect to="/" />} />
           </Switch>
         </Layout>

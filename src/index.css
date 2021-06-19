@@ -5,8 +5,3 @@
 body {
   @apply font-sans antialiased text-gray-100 bg-gray-800;
 }
-
-/* TODO: Nope... */
-input {
-  @apply text-black;
-}
