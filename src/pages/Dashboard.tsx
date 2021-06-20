@@ -33,13 +33,15 @@ const Dashboard: React.FC = () => {
   return (
     <div className="flex flex-col w-full space-y-4">
       <div className="flex flex-row justify-between">
-        <h1 className="text-4xl">Welcome, {profile?.username}!</h1>
+        <h1 className="text-4xl">
+          Welcome{profile?.username && <>, {profile?.username}</>}!
+        </h1>
         <Button onClick={() => history.push('/game')} variant="dark">
           Let&apos;s play!
         </Button>
       </div>
       {error && <Error>{error}</Error>}
-      {games && (
+      {games && games.length > 0 && (
         // TODO: Components!
         <Table>
           <THead>
