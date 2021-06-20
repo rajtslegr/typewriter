@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
+import { Table, TBody, Td, Th, THead } from '../components/ui/Table';
 import { useAuth } from '../contexts/Auth';
 import { getGames } from '../lib/supabase';
 import { definitions } from '../types/supabase';
@@ -40,59 +41,30 @@ const Dashboard: React.FC = () => {
       {error && <Error>{error}</Error>}
       {games && (
         // TODO: Components!
-        <table className="min-w-full divide-y divide-gray-500">
-          <thead className="bg-gray-900">
+        <Table>
+          <THead>
             <tr>
-              <th
-                scope="col"
-                className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-200 uppercase"
-              >
-                Words
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-200 uppercase"
-              >
-                Errors
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-200 uppercase"
-              >
-                WPM
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-200 uppercase"
-              >
-                Accuracy
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-200 uppercase"
-              >
-                Date
-              </th>
+              <Th>Words</Th>
+              <Th>Errors</Th>
+              <Th>WPM</Th>
+              <Th>Accuracy</Th>
+              <Th>Date</Th>
             </tr>
-          </thead>
-          <tbody className="bg-gray-700 divide-y divide-gray-500">
+          </THead>
+          <TBody>
             {games?.map((game) => {
               return (
                 <tr key={game.id}>
-                  <td className="px-6 py-2 whitespace-nowrap">{game.words}</td>
-                  <td className="px-6 py-2 whitespace-nowrap">{game.errors}</td>
-                  <td className="px-6 py-2 whitespace-nowrap">{game.wpm}</td>
-                  <td className="px-6 py-2 whitespace-nowrap">
-                    {game.accuracy} %
-                  </td>
-                  <td className="px-6 py-2 whitespace-nowrap">
-                    {format(new Date(game.insterted_at), 'dd.MM.yyy')}
-                  </td>
+                  <Td>{game.words}</Td>
+                  <Td>{game.errors}</Td>
+                  <Td>{game.wpm}</Td>
+                  <Td>{game.accuracy} %</Td>
+                  <Td>{format(new Date(game.insterted_at), 'dd.MM.yyy')}</Td>
                 </tr>
               );
             })}
-          </tbody>
-        </table>
+          </TBody>
+        </Table>
       )}
     </div>
   );

@@ -4,7 +4,7 @@
  */
 
 export interface paths {
-  "/": {
+  '/': {
     get: {
       responses: {
         /** OK */
@@ -12,39 +12,39 @@ export interface paths {
       };
     };
   };
-  "/games": {
+  '/games': {
     get: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.games.id"];
-          user?: parameters["rowFilter.games.user"];
-          words?: parameters["rowFilter.games.words"];
-          errors?: parameters["rowFilter.games.errors"];
-          wpm?: parameters["rowFilter.games.wpm"];
-          accuracy?: parameters["rowFilter.games.accuracy"];
-          insterted_at?: parameters["rowFilter.games.insterted_at"];
+          id?: parameters['rowFilter.games.id'];
+          user?: parameters['rowFilter.games.user'];
+          words?: parameters['rowFilter.games.words'];
+          errors?: parameters['rowFilter.games.errors'];
+          wpm?: parameters['rowFilter.games.wpm'];
+          accuracy?: parameters['rowFilter.games.accuracy'];
+          insterted_at?: parameters['rowFilter.games.insterted_at'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["games"][];
+          schema: definitions['games'][];
         };
         /** Partial Content */
         206: unknown;
@@ -54,15 +54,15 @@ export interface paths {
       parameters: {
         body: {
           /** games */
-          games?: definitions["games"];
+          games?: definitions['games'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -73,17 +73,17 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.games.id"];
-          user?: parameters["rowFilter.games.user"];
-          words?: parameters["rowFilter.games.words"];
-          errors?: parameters["rowFilter.games.errors"];
-          wpm?: parameters["rowFilter.games.wpm"];
-          accuracy?: parameters["rowFilter.games.accuracy"];
-          insterted_at?: parameters["rowFilter.games.insterted_at"];
+          id?: parameters['rowFilter.games.id'];
+          user?: parameters['rowFilter.games.user'];
+          words?: parameters['rowFilter.games.words'];
+          errors?: parameters['rowFilter.games.errors'];
+          wpm?: parameters['rowFilter.games.wpm'];
+          accuracy?: parameters['rowFilter.games.accuracy'];
+          insterted_at?: parameters['rowFilter.games.insterted_at'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -94,21 +94,21 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.games.id"];
-          user?: parameters["rowFilter.games.user"];
-          words?: parameters["rowFilter.games.words"];
-          errors?: parameters["rowFilter.games.errors"];
-          wpm?: parameters["rowFilter.games.wpm"];
-          accuracy?: parameters["rowFilter.games.accuracy"];
-          insterted_at?: parameters["rowFilter.games.insterted_at"];
+          id?: parameters['rowFilter.games.id'];
+          user?: parameters['rowFilter.games.user'];
+          words?: parameters['rowFilter.games.words'];
+          errors?: parameters['rowFilter.games.errors'];
+          wpm?: parameters['rowFilter.games.wpm'];
+          accuracy?: parameters['rowFilter.games.accuracy'];
+          insterted_at?: parameters['rowFilter.games.insterted_at'];
         };
         body: {
           /** games */
-          games?: definitions["games"];
+          games?: definitions['games'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -117,35 +117,35 @@ export interface paths {
       };
     };
   };
-  "/profiles": {
+  '/profiles': {
     get: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.profiles.id"];
-          updated_at?: parameters["rowFilter.profiles.updated_at"];
-          username?: parameters["rowFilter.profiles.username"];
+          id?: parameters['rowFilter.profiles.id'];
+          updated_at?: parameters['rowFilter.profiles.updated_at'];
+          username?: parameters['rowFilter.profiles.username'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["profiles"][];
+          schema: definitions['profiles'][];
         };
         /** Partial Content */
         206: unknown;
@@ -155,15 +155,15 @@ export interface paths {
       parameters: {
         body: {
           /** profiles */
-          profiles?: definitions["profiles"];
+          profiles?: definitions['profiles'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -174,13 +174,13 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.profiles.id"];
-          updated_at?: parameters["rowFilter.profiles.updated_at"];
-          username?: parameters["rowFilter.profiles.username"];
+          id?: parameters['rowFilter.profiles.id'];
+          updated_at?: parameters['rowFilter.profiles.updated_at'];
+          username?: parameters['rowFilter.profiles.username'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -191,17 +191,17 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.profiles.id"];
-          updated_at?: parameters["rowFilter.profiles.updated_at"];
-          username?: parameters["rowFilter.profiles.username"];
+          id?: parameters['rowFilter.profiles.id'];
+          updated_at?: parameters['rowFilter.profiles.updated_at'];
+          username?: parameters['rowFilter.profiles.username'];
         };
         body: {
           /** profiles */
-          profiles?: definitions["profiles"];
+          profiles?: definitions['profiles'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -244,11 +244,11 @@ export interface definitions {
 
 export interface parameters {
   /** Preference */
-  preferParams: "params=single-object";
+  preferParams: 'params=single-object';
   /** Preference */
-  preferReturn: "return=representation" | "return=minimal" | "return=none";
+  preferReturn: 'return=representation' | 'return=minimal' | 'return=none';
   /** Preference */
-  preferCount: "count=none";
+  preferCount: 'count=none';
   /** Filtering Columns */
   select: string;
   /** On Conflict */
@@ -264,19 +264,19 @@ export interface parameters {
   /** Limiting and Pagination */
   limit: string;
   /** games */
-  "body.games": definitions["games"];
-  "rowFilter.games.id": string;
-  "rowFilter.games.user": string;
-  "rowFilter.games.words": string;
-  "rowFilter.games.errors": string;
-  "rowFilter.games.wpm": string;
-  "rowFilter.games.accuracy": string;
-  "rowFilter.games.insterted_at": string;
+  'body.games': definitions['games'];
+  'rowFilter.games.id': string;
+  'rowFilter.games.user': string;
+  'rowFilter.games.words': string;
+  'rowFilter.games.errors': string;
+  'rowFilter.games.wpm': string;
+  'rowFilter.games.accuracy': string;
+  'rowFilter.games.insterted_at': string;
   /** profiles */
-  "body.profiles": definitions["profiles"];
-  "rowFilter.profiles.id": string;
-  "rowFilter.profiles.updated_at": string;
-  "rowFilter.profiles.username": string;
+  'body.profiles': definitions['profiles'];
+  'rowFilter.profiles.id': string;
+  'rowFilter.profiles.updated_at': string;
+  'rowFilter.profiles.username': string;
 }
 
 export interface operations {}
