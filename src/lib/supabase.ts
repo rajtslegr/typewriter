@@ -33,4 +33,37 @@ const upsertProfile = async (id?: string, username?: string): Promise<void> => {
   });
 };
 
-export { getProfile, upsertProfile };
+const getGames = async (
+  user: User | null | undefined,
+): Promise<definitions['games'][] | undefined | null> => {
+  if (user) {
+    const { data } = await supabase
+      .from<definitions['games']>('games')
+      .select('*')
+      .eq('user', user?.id);
+
+    return data;
+  }
+};
+
+const insertGame = async (
+  user: string | undefined,
+  words: number,
+  errors: number,
+  wpm: number,
+  accuracy: string,
+): Promise<void> => {
+  const updates = {
+    user,
+    words,
+    errors,
+    wpm,
+    accuracy,
+  };
+
+  await supabase.from('games').insert(updates, {
+    returning: 'minimal',
+  });
+};
+
+export { getProfile, upsertProfile, insertGame, getGames };

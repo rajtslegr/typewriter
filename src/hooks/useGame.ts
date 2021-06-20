@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useAuth } from '../contexts/Auth';
+import { insertGame } from '../lib/supabase';
 import generateWord from '../utils/wordGenerator';
 import useInterval from './useInterval';
 import useKeyPress from './useKeyPress';
@@ -21,6 +23,7 @@ interface IGameProps {
 }
 
 const useGame = (): IGameProps => {
+  const { user } = useAuth();
   const [gameInProgress, setGameInProgress] = useState(false);
   const [startedCountDown, setStartedCountDown] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
@@ -41,11 +44,16 @@ const useGame = (): IGameProps => {
   const [accuracy, setAccuracy] = useState('100');
 
   useInterval(
-    () => {
+    async () => {
       if (timeOut > 0) {
         setTimeout(timeOut - 1);
       } else {
         stopGame();
+        try {
+          await insertGame(user?.id, wordsCount, errorsCount, wpm, accuracy);
+        } catch (error) {
+          console.log(error.message);
+        }
       }
     },
     gameInProgress ? 1000 : null,
