@@ -10,7 +10,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
       <label>
         <div className="mb-1 font-medium">{label}</div>
         <input
-          className="w-full px-4 py-2 text-gray-800 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-200 focus:border-brand-600 focus:ring-brand-500 disabled:opacity-60 disabled:bg-gray-500 disabled:bg-opacity-20"
+          className="w-full px-4 py-2 text-gray-800 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-200 focus:border-brand-600 focus:ring-brand-500 disabled:opacity-50"
           type={type}
           ref={ref}
           {...props}

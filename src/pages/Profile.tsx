@@ -33,21 +33,23 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <div>
-      <Input label="Email" value={user?.email} disabled />
-      <Input
-        label="Username"
-        value={username || ''}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      {error && <Error>{error}</Error>}
-      <Button
-        onClick={() => updateProfile({ username })}
-        disabled={loading}
-        variant="dark"
-      >
-        Update
-      </Button>
+    <div className="flex flex-col items-center justify-center w-full">
+      <div className="flex flex-col w-1/3 space-y-4">
+        <Input label="Email" value={user?.email} disabled />
+        <Input
+          label="Username"
+          value={username || ''}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        {error && <Error>{error}</Error>}
+        <Button
+          onClick={() => updateProfile({ username })}
+          disabled={loading}
+          variant="dark"
+        >
+          Update
+        </Button>
+      </div>
     </div>
   );
 };

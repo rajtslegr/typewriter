@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/Auth';
 import Button from './Button';
 
@@ -14,20 +14,26 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-row justify-end w-screen h-12 p-2 space-x-2 text-black bg-brand-500">
-      {user && (
-        <>
-          <span
-            className="flex items-center cursor-pointer"
-            onClick={() => history.push('/profile')}
-            aria-hidden="true"
-          >
-            {profile?.username || user?.email}
+    <header className="flex flex-row items-center justify-between w-screen h-12 p-2 text-black bg-brand-500">
+      <Link to="/">
+        <div className="items-center italic font-bold text-center">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800">
+            TypeWriter
           </span>
+        </div>
+      </Link>
+      {user && (
+        <div className="space-x-2">
+          <Button onClick={() => history.push('/dashboard')} variant="light">
+            Dashboard
+          </Button>
+          <Button onClick={() => history.push('/profile')} variant="light">
+            {profile?.username || user?.email}
+          </Button>
           <Button onClick={handleSignOut} type="submit" variant="light">
             Sign out
           </Button>
-        </>
+        </div>
       )}
       {!user && location.pathname !== '/login' && (
         <Button
@@ -38,7 +44,7 @@ const Header: React.FC = () => {
           Log In
         </Button>
       )}
-    </div>
+    </header>
   );
 };
 

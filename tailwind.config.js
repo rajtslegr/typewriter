@@ -3,6 +3,7 @@ const colors = require('tailwindcss/colors');
 const brandColor = colors.purple;
 
 module.exports = {
+  mode: 'jit',
   purge: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -16,7 +17,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled'],
+    },
   },
   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };

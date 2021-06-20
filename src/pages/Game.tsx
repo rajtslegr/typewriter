@@ -24,7 +24,7 @@ const Game: React.FC = () => {
   } = useGame();
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full space-y-8">
+    <div className="relative flex flex-col items-center justify-center w-full pt-24 space-y-12">
       {(gameInProgress || startedCountDown || gameFinished) && (
         <ScoreBoard
           timeOut={timeOut}

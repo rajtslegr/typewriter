@@ -1,20 +1,16 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/Auth';
 
 const Dashboard: React.FC = () => {
-  const { user, signOut } = useAuth();
-  const history = useHistory();
-
-  const handleSignOut = async (): Promise<void> => {
-    await signOut();
-    history.push('/login');
-  };
+  const { profile } = useAuth();
 
   return (
-    <div>
-      <p>Welcome, {user?.id}!</p>
-      <button onClick={handleSignOut}>Sign out</button>
+    <div className="flex flex-col w-full space-y-4">
+      <h1 className="text-4xl">Welcome, {profile?.username}!</h1>
+      <p>
+        Let&apos;s <Link to="/game">play!</Link>
+      </p>
     </div>
   );
 };
