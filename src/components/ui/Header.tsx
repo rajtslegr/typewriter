@@ -22,28 +22,39 @@ const Header: React.FC = () => {
           </span>
         </div>
       </Link>
-      {user && (
-        <div className="space-x-2">
-          <Button onClick={() => history.push('/dashboard')} variant="light">
-            Dashboard
+
+      <div className="space-x-2">
+        {user ? (
+          <>
+            <Button onClick={() => history.push('/dashboard')} variant="light">
+              Dashboard
+            </Button>
+            <Button onClick={() => history.push('/profile')} variant="light">
+              {profile?.username || user?.email}
+            </Button>
+            <Button onClick={handleSignOut} type="submit" variant="light">
+              Sign out
+            </Button>
+          </>
+        ) : (
+          <Button
+            onClick={() => history.push('/game')}
+            type="button"
+            variant="light"
+          >
+            Play without an account!
           </Button>
-          <Button onClick={() => history.push('/profile')} variant="light">
-            {profile?.username || user?.email}
+        )}
+        {!user && location.pathname !== '/login' && (
+          <Button
+            onClick={() => history.push('/login')}
+            type="submit"
+            variant="light"
+          >
+            Log In
           </Button>
-          <Button onClick={handleSignOut} type="submit" variant="light">
-            Sign out
-          </Button>
-        </div>
-      )}
-      {!user && location.pathname !== '/login' && (
-        <Button
-          onClick={() => history.push('/login')}
-          type="submit"
-          variant="light"
-        >
-          Log In
-        </Button>
-      )}
+        )}
+      </div>
     </header>
   );
 };

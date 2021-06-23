@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import CountDown from '../components/game/CountDown';
 import ScoreBoard from '../components/game/ScoreBoard';
 import Word from '../components/game/Word';
@@ -22,6 +23,7 @@ const Game: React.FC = () => {
     nextWord,
     preparePlayGround,
   } = useGame();
+  const history = useHistory();
 
   return (
     <div className="relative flex flex-col items-center justify-center w-full pt-24 space-y-12">
@@ -43,13 +45,18 @@ const Game: React.FC = () => {
         />
       )}
       {!gameInProgress && !startedCountDown && (
-        <Button
-          onClick={() => preparePlayGround()}
-          type="button"
-          variant="dark"
-        >
-          {!gameFinished ? 'START GAME' : 'PLAY AGAIN'}
-        </Button>
+        <div className="flex flex-row space-x-2">
+          <Button
+            onClick={() => preparePlayGround()}
+            type="button"
+            variant="dark"
+          >
+            {!gameFinished ? 'Start game' : 'Play again'}
+          </Button>
+          <Button onClick={() => history.push('/dashboard')} variant="dark">
+            Dashboard
+          </Button>
+        </div>
       )}
       {startedCountDown && <CountDown countDown={countDown} />}
     </div>

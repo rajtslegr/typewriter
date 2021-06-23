@@ -49,10 +49,13 @@ const useGame = (): IGameProps => {
         setTimeout(timeOut - 1);
       } else {
         stopGame();
-        try {
-          await insertGame(user?.id, wordsCount, errorsCount, wpm, accuracy);
-        } catch (error) {
-          console.log(error.message);
+
+        if (user) {
+          try {
+            await insertGame(user?.id, wordsCount, errorsCount, wpm, accuracy);
+          } catch (error) {
+            console.log(error.message);
+          }
         }
       }
     },

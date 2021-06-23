@@ -42,26 +42,25 @@ const Dashboard: React.FC = () => {
       </div>
       {error && <Error>{error}</Error>}
       {games && games.length > 0 && (
-        // TODO: Components!
         <Table>
           <THead>
             <tr>
+              <Th>Date</Th>
               <Th>Words</Th>
               <Th>Errors</Th>
               <Th>WPM</Th>
               <Th>Accuracy</Th>
-              <Th>Date</Th>
             </tr>
           </THead>
           <TBody>
             {games?.map((game) => {
               return (
                 <tr key={game.id}>
+                  <Td>{format(new Date(game.insterted_at), 'dd.MM.yyy')}</Td>
                   <Td>{game.words}</Td>
                   <Td>{game.errors}</Td>
                   <Td>{game.wpm}</Td>
                   <Td>{game.accuracy} %</Td>
-                  <Td>{format(new Date(game.insterted_at), 'dd.MM.yyy')}</Td>
                 </tr>
               );
             })}
