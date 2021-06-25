@@ -1,32 +1,29 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useHistory } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Input from '../components/ui/Input';
 import { useAuth } from '../contexts/Auth';
 import { supabase } from '../lib/supabase';
+import { IAuthInputs } from '../types/types';
 
 const SignUp: React.FC = () => {
   const { user } = useAuth();
   const history = useHistory();
   const [error, setError] = useState<string | null>(null);
-
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   if (user) {
     history.push('/');
   }
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
-    e.preventDefault();
-
-    const email = emailRef?.current?.value;
-    const password = passwordRef?.current?.value;
-
-    const { error } = await supabase.auth.signUp({ email, password });
+  const onSubmit: SubmitHandler<IAuthInputs> = async (data): Promise<void> => {
+    const { error } = await supabase.auth.signUp(data);
 
     if (error) {
       setError(error.message);
@@ -37,9 +34,30 @@ const SignUp: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <form onSubmit={handleSubmit} className="flex flex-col w-1/3 space-y-4">
-        <Input type="email" label="Email" ref={emailRef} />
-        <Input type="password" label="Password" ref={passwordRef} />
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col w-full space-y-4 md:w-1/3"
+      >
+        <Input
+          {...register('email', {
+            required: { value: true, message: 'Email is required' },
+          })}
+          type="email"
+          label="Email"
+        ></Input>
+        <Error>{errors.email?.message}</Error>
+        <Input
+          {...register('password', {
+            required: { value: true, message: 'Password is required' },
+            minLength: {
+              value: 6,
+              message: 'Password must by at least 6 characters long',
+            },
+          })}
+          type="password"
+          label="Password"
+        />
+        <Error>{errors.password?.message}</Error>
         {error && <Error>{error}</Error>}
         <Button onClick={() => handleSubmit} type="submit" variant="dark">
           Sing Up

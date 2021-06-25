@@ -1,27 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/Auth';
 import { insertGame } from '../lib/supabase';
+import { IGameProps } from '../types/types';
 import generateWord from '../utils/wordGenerator';
 import useInterval from './useInterval';
 import useKeyPress from './useKeyPress';
-
-interface IGameProps {
-  startedCountDown: boolean;
-  countDown: number;
-  gameInProgress: boolean;
-  gameFinished: boolean;
-  timeOut: number;
-  wordsCount: number;
-  errorsCount: number;
-  wpm: number;
-  accuracy: string;
-  outgoingChars: string;
-  currentChar: string;
-  incomingChars: string;
-  nextWord: string;
-  postError: string | null;
-  preparePlayGround: () => void;
-}
 
 const useGame = (): IGameProps => {
   const { user } = useAuth();

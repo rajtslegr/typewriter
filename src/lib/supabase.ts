@@ -7,7 +7,7 @@ export const supabase = createClient(
   { autoRefreshToken: true },
 );
 
-const getProfile = async (
+export const getProfile = async (
   user: User | null | undefined,
 ): Promise<definitions['profiles'] | null | undefined> => {
   if (user) {
@@ -21,7 +21,7 @@ const getProfile = async (
   }
 };
 
-const upsertProfile = async (
+export const upsertProfile = async (
   id?: string,
   username?: string,
 ): Promise<unknown | undefined> => {
@@ -38,7 +38,7 @@ const upsertProfile = async (
   return data;
 };
 
-const getGames = async (
+export const getGames = async (
   user: User | null | undefined,
 ): Promise<definitions['games'][] | null | undefined> => {
   if (user) {
@@ -51,7 +51,7 @@ const getGames = async (
   }
 };
 
-const insertGame = async (
+export const insertGame = async (
   user: string | undefined,
   words: number,
   errors: number,
@@ -72,5 +72,3 @@ const insertGame = async (
 
   return data;
 };
-
-export { getProfile, upsertProfile, insertGame, getGames };

@@ -9,13 +9,13 @@ const Button = forwardRef<HTMLButtonElement, Props>(
   ({ children, variant, ...props }, ref) => {
     const theme = {
       light:
-        'bg-gray-900 border-gray-900 text-brand-500 hover:bg-brand-500 hover:text-gray-900',
-      dark: 'bg-brand-500 border-brand-500 text-gray-900 hover:bg-brand-400',
+        'bg-gray-900 border-gray-900 text-brand-500 hover:bg-brand-500 hover:text-gray-900 disabled:text-gray-900 disabled:bg-gray-500 disabled:border-gray-500 disabled:hover:shadow-none',
+      dark: 'bg-brand-500 border-brand-500 text-gray-900 hover:bg-brand-400 disabled:text-gray-900 disabled:bg-gray-500 disabled:border-gray-500 disabled:hover:shadow-none',
     };
 
     return (
       <button
-        className={`${theme[variant]} px-2 py transition rounded border hover:shadow`}
+        className={`${theme[variant]} px-2 py transition rounded border hover:shadow disabled:cursor-not-allowed`}
         ref={ref}
         {...props}
       >
