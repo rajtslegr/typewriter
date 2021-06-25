@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
+import Loader from '../components/ui/Loader';
 import { Table, TBody, Td, Th, THead } from '../components/ui/Table';
 import { useAuth } from '../contexts/Auth';
 import { getGames } from '../lib/supabase';
@@ -29,6 +30,10 @@ const Dashboard: React.FC = () => {
       setError(error.message);
     }
   };
+
+  if (!games && !error) {
+    return <Loader />;
+  }
 
   return (
     <div className="flex flex-col w-full space-y-4">
@@ -58,8 +63,8 @@ const Dashboard: React.FC = () => {
                 <tr key={game.id}>
                   <Td>{format(new Date(game.insterted_at), 'dd.MM.yyy')}</Td>
                   <Td>{game.words}</Td>
-                  <Td>{game.errors}</Td>
                   <Td>{game.wpm}</Td>
+                  <Td>{game.errors}</Td>
                   <Td>{game.accuracy} %</Td>
                 </tr>
               );

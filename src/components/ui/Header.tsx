@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/Auth';
+import { supabase } from '../../lib/supabase';
 import Button from './Button';
 
 const Header: React.FC = () => {
-  const { signOut, user, profile } = useAuth();
+  const { user, profile } = useAuth();
   const history = useHistory();
   const location = useLocation();
 
   const handleSignOut = async (): Promise<void> => {
-    await signOut();
-    history.push('/login');
+    await supabase.auth.signOut();
+    history.push('/signin');
   };
 
   return (
@@ -45,13 +46,13 @@ const Header: React.FC = () => {
             Play without an account!
           </Button>
         )}
-        {!user && location.pathname !== '/login' && (
+        {!user && location.pathname !== '/signin' && (
           <Button
-            onClick={() => history.push('/login')}
+            onClick={() => history.push('/signin')}
             type="submit"
             variant="light"
           >
-            Log In
+            Sign In
           </Button>
         )}
       </div>

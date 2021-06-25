@@ -4,6 +4,7 @@ import CountDown from '../components/game/CountDown';
 import ScoreBoard from '../components/game/ScoreBoard';
 import Word from '../components/game/Word';
 import Button from '../components/ui/Button';
+import Error from '../components/ui/Error';
 import useGame from '../hooks/useGame';
 
 const Game: React.FC = () => {
@@ -21,6 +22,7 @@ const Game: React.FC = () => {
     currentChar,
     incomingChars,
     nextWord,
+    postError,
     preparePlayGround,
   } = useGame();
   const history = useHistory();
@@ -58,6 +60,7 @@ const Game: React.FC = () => {
           </Button>
         </div>
       )}
+      {postError && <Error>{postError}</Error>}
       {startedCountDown && <CountDown countDown={countDown} />}
     </div>
   );

@@ -1,10 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  Provider,
-  Session,
-  User,
-  UserCredentials,
-} from '@supabase/supabase-js';
+import { User } from '@supabase/supabase-js';
 import React, {
   ReactElement,
   useCallback,
@@ -20,23 +15,6 @@ interface Props {
 }
 
 interface IAuthContext {
-  signUp: (data: any) => Promise<{
-    user: User | null;
-    session: Session | null;
-    error: Error | null;
-    data: User | Session | null;
-  }>;
-  signIn: (data: any) => Promise<{
-    session: Session | null;
-    user: User | null;
-    provider?: Provider | undefined;
-    url?: string | null | undefined;
-    error: Error | null;
-    data: Session | null;
-  }>;
-  signOut: () => Promise<{
-    error: Error | null;
-  }>;
   refreshProfile: () => void;
   user: User | null | undefined;
   profile: definitions['profiles'] | null | undefined;
@@ -73,9 +51,6 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
   }, [user, refreshProfile]);
 
   const value = {
-    signUp: (data: UserCredentials) => supabase.auth.signUp(data),
-    signIn: (data: UserCredentials) => supabase.auth.signIn(data),
-    signOut: () => supabase.auth.signOut(),
     refreshProfile,
     user,
     profile,

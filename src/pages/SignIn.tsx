@@ -4,13 +4,15 @@ import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Input from '../components/ui/Input';
 import { useAuth } from '../contexts/Auth';
+import { supabase } from '../lib/supabase';
 
-const LogIn: React.FC = () => {
-  const { signIn, user } = useAuth();
+const SignIn: React.FC = () => {
+  const { user } = useAuth();
   const history = useHistory();
+  const [error, setError] = useState<string | null>(null);
+
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const [error, setError] = useState<string | null>(null);
 
   if (user) {
     history.push('/');
@@ -24,7 +26,7 @@ const LogIn: React.FC = () => {
     const email = emailRef?.current?.value;
     const password = passwordRef?.current?.value;
 
-    const { error } = await signIn({ email, password });
+    const { error } = await supabase.auth.signIn({ email, password });
 
     if (error) {
       setError(error.message);
@@ -35,7 +37,10 @@ const LogIn: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <form onSubmit={handleSubmit} className="flex flex-col w-1/3 space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col w-full space-y-4 md:w-1/3"
+      >
         <Input type="email" label="Email" ref={emailRef}></Input>
         <Input type="password" label="Password" ref={passwordRef} />
         {error && <Error>{error}</Error>}
@@ -53,4 +58,4 @@ const LogIn: React.FC = () => {
   );
 };
 
-export default LogIn;
+export default SignIn;

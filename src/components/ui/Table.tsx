@@ -1,11 +1,7 @@
 import React from 'react';
 
 interface Props {
-  children:
-    | ((JSX.Element | JSX.Element[]) & React.ReactNode)
-    | string
-    | number
-    | string[];
+  children: (JSX.Element | JSX.Element[]) | (number | string | string[]);
 }
 
 export const Table: React.FC<Props> = ({ children }) => (

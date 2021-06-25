@@ -22,7 +22,7 @@ const ProtectedRoute = (props: PrivateRouteProps) => {
         ) : (
           <Redirect
             to={{
-              pathname: '/login',
+              pathname: '/signin',
             }}
           />
         )

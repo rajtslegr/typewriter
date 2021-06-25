@@ -10,8 +10,8 @@ import Layout from './components/ui/Layout';
 import AuthProvider from './contexts/Auth';
 import Dashboard from './pages/Dashboard';
 import Game from './pages/Game';
-import LogIn from './pages/LogIn';
 import Profile from './pages/Profile';
+import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
 const App: React.FC = () => {
@@ -24,7 +24,7 @@ const App: React.FC = () => {
             <ProtectedRoute exact path="/profile" component={Profile} />
             <Route exact path="/game" component={Game} />
             <Route path="/signup" component={SignUp} />
-            <Route path="/login" component={LogIn} />
+            <Route path="/signin" component={SignIn} />
             <Route render={() => <Redirect to="/" />} />
           </Switch>
         </Layout>

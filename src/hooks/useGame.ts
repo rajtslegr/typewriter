@@ -19,6 +19,7 @@ interface IGameProps {
   currentChar: string;
   incomingChars: string;
   nextWord: string;
+  postError: string | null;
   preparePlayGround: () => void;
 }
 
@@ -43,6 +44,8 @@ const useGame = (): IGameProps => {
   const [errorsCount, setErrorsCount] = useState(0);
   const [accuracy, setAccuracy] = useState('100');
 
+  const [postError, setPostError] = useState<string | null>(null);
+
   useInterval(
     async () => {
       if (timeOut > 0) {
@@ -54,7 +57,7 @@ const useGame = (): IGameProps => {
           try {
             await insertGame(user?.id, wordsCount, errorsCount, wpm, accuracy);
           } catch (error) {
-            console.log(error.message);
+            setPostError(error.message);
           }
         }
       }
@@ -93,6 +96,7 @@ const useGame = (): IGameProps => {
       setErrorsCount(0);
       setAccuracy('100');
       setWordsCount(0);
+      setPostError(null);
     }
 
     const generatedWord = generateWord();
@@ -171,6 +175,7 @@ const useGame = (): IGameProps => {
     incomingChars,
     nextWord,
     preparePlayGround,
+    postError,
   };
 };
 

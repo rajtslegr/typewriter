@@ -7,10 +7,9 @@ export const supabase = createClient(
   { autoRefreshToken: true },
 );
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getProfile = async (
   user: User | null | undefined,
-): Promise<definitions['profiles'] | undefined | null> => {
+): Promise<definitions['profiles'] | null | undefined> => {
   if (user) {
     const { data } = await supabase
       .from<definitions['profiles']>('profiles')
@@ -22,21 +21,26 @@ const getProfile = async (
   }
 };
 
-const upsertProfile = async (id?: string, username?: string): Promise<void> => {
+const upsertProfile = async (
+  id?: string,
+  username?: string,
+): Promise<unknown | undefined> => {
   const updates = {
     id,
     username,
     updated_at: new Date(),
   };
 
-  await supabase.from('profiles').upsert(updates, {
+  const { data } = await supabase.from('profiles').upsert(updates, {
     returning: 'minimal',
   });
+
+  return data;
 };
 
 const getGames = async (
   user: User | null | undefined,
-): Promise<definitions['games'][] | undefined | null> => {
+): Promise<definitions['games'][] | null | undefined> => {
   if (user) {
     const { data } = await supabase
       .from<definitions['games']>('games')
@@ -53,7 +57,7 @@ const insertGame = async (
   errors: number,
   wpm: number,
   accuracy: string,
-): Promise<void> => {
+): Promise<unknown | undefined> => {
   const updates = {
     user,
     words,
@@ -62,9 +66,11 @@ const insertGame = async (
     accuracy,
   };
 
-  await supabase.from('games').insert(updates, {
+  const { data } = await supabase.from('games').insert(updates, {
     returning: 'minimal',
   });
+
+  return data;
 };
 
 export { getProfile, upsertProfile, insertGame, getGames };

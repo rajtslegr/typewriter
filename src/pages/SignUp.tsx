@@ -4,13 +4,15 @@ import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Input from '../components/ui/Input';
 import { useAuth } from '../contexts/Auth';
+import { supabase } from '../lib/supabase';
 
 const SignUp: React.FC = () => {
-  const { signUp, user } = useAuth();
+  const { user } = useAuth();
   const history = useHistory();
+  const [error, setError] = useState<string | null>(null);
+
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const [error, setError] = useState<string | null>(null);
 
   if (user) {
     history.push('/');
@@ -24,7 +26,7 @@ const SignUp: React.FC = () => {
     const email = emailRef?.current?.value;
     const password = passwordRef?.current?.value;
 
-    const { error } = await signUp({ email, password });
+    const { error } = await supabase.auth.signUp({ email, password });
 
     if (error) {
       setError(error.message);
@@ -44,8 +46,8 @@ const SignUp: React.FC = () => {
         </Button>
         <p>
           Already have an account?&nbsp;
-          <Link to="/login" className="underline">
-            Log In
+          <Link to="/signin" className="underline">
+            Sign In
           </Link>
         </p>
       </form>

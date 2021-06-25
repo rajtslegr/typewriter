@@ -34,7 +34,7 @@ const Profile: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="flex flex-col w-1/3 space-y-4">
+      <div className="flex flex-col w-full space-y-4 md:w-1/3">
         <Input label="Email" value={user?.email} disabled />
         <Input
           label="Username"
