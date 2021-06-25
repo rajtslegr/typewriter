@@ -57,8 +57,7 @@ const SignUp: React.FC = () => {
           type="password"
           label="Password"
         />
-        <Error>{errors.password?.message}</Error>
-        {error && <Error>{error}</Error>}
+        <Error>{errors.password?.message || error}</Error>
         <Button onClick={() => handleSubmit} type="submit" variant="dark">
           Sing Up
         </Button>
