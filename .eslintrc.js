@@ -4,8 +4,8 @@ module.exports = {
     node: true,
     es6: true,
   },
-  parserOptions: { ecmaVersion: 8 }, // to enable features such as async/await
-  ignorePatterns: ['node_modules/*', '!.prettierrc.js'], // We don't want to lint generated files nor node_modules, but we want to lint .prettierrc.js (ignored by default by eslint)
+  parserOptions: { ecmaVersion: 8 },
+  ignorePatterns: ['node_modules/*', '!.prettierrc.js'],
   extends: ['eslint:recommended'],
   overrides: [
     {
@@ -19,23 +19,32 @@ module.exports = {
       },
       extends: [
         'eslint:recommended',
-        'plugin:@typescript-eslint/recommended', // TypeScript rules
-        'plugin:react/recommended', // React rules
-        'plugin:react-hooks/recommended', // React hooks rules
-        'plugin:jsx-a11y/recommended', // Accessibility rules
-        'plugin:prettier/recommended', // Prettier recommended rules
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:jsx-a11y/recommended',
+        'plugin:prettier/recommended',
       ],
       rules: {
-        'react/prop-types': 'off', // We will use TypeScript's types for component props instead
-        'react/react-in-jsx-scope': 'off', // No need to import React with Next.js
-        'jsx-a11y/anchor-is-valid': 'off', // This rule is not compatible with how Next.js's <Link />
-        '@typescript-eslint/no-unused-vars': ['error'],
-        '@typescript-eslint/explicit-function-return-type': [
-          // I suggest this setting for requiring return types on functions only where usefull
-          'warn',
+        'react/display-name': 0,
+        'react/prop-types': 0,
+        '@typescript-eslint/explicit-function-return-type': 0,
+        '@typescript-eslint/explicit-member-accessibility': 0,
+        '@typescript-eslint/indent': 0,
+        '@typescript-eslint/member-delimiter-style': 0,
+        '@typescript-eslint/no-explicit-any': 0,
+        '@typescript-eslint/no-var-requires': 0,
+        '@typescript-eslint/no-use-before-define': 0,
+        '@typescript-eslint/no-unused-vars': [
+          2,
           {
-            allowExpressions: true,
-            allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+            argsIgnorePattern: '^_',
+          },
+        ],
+        'no-console': [
+          2,
+          {
+            allow: ['warn', 'error'],
           },
         ],
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
