@@ -40,11 +40,22 @@ export const upsertProfile = async (
 
 export const getGames = async (
   user: User | null | undefined,
+  page: number,
 ): Promise<definitions['games'][] | null | undefined> => {
   if (user) {
+    const pageSize = 10;
+    let [start, end] = [0, 9];
+
+    if (page > 0) {
+      start = page * pageSize;
+      end = (page + 1) * pageSize - 1;
+    }
+
     const { data } = await supabase
       .from<definitions['games']>('games')
       .select('*')
+      .range(start, end)
+      .order('insterted_at', { ascending: false })
       .eq('user', user?.id);
 
     return data;

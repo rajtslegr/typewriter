@@ -15,17 +15,18 @@ const Dashboard: React.FC = () => {
     null,
   );
   const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState<number>(0);
 
   const history = useHistory();
 
   useEffect(() => {
     getGamesDash();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
+  }, [user, page]);
 
   const getGamesDash = async (): Promise<void> => {
     try {
-      setGames(await getGames(user));
+      setGames(await getGames(user, page));
     } catch (error) {
       setError(error.message);
     }
@@ -72,6 +73,18 @@ const Dashboard: React.FC = () => {
           </TBody>
         </Table>
       )}
+      <div className="flex flex-row justify-end space-x-2">
+        {page > 0 && (
+          <Button onClick={() => setPage(page - 1)} variant="dark">
+            Previous
+          </Button>
+        )}
+        {games?.length === 10 && (
+          <Button onClick={() => setPage(page + 1)} variant="dark">
+            Next
+          </Button>
+        )}
+      </div>
     </div>
   );
 };
