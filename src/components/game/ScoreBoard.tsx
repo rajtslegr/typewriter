@@ -15,7 +15,7 @@ const ScoreBoard: React.FC<Props> = ({
   wpm,
   accuracy,
 }) => (
-  <div className="flex flex-col w-full p-8 text-2xl text-green-500 border rounded md:items-center md:flex-row border-brand-500 justify-evenly">
+  <div className="flex flex-col w-full p-8 text-2xl text-gray-300 border rounded md:items-center md:flex-row border-brand-500 justify-evenly">
     <div>Time Left: {timeOut}</div>
     <div>Words: {wordsCount}</div>
     <div>WPM: {wpm}</div>

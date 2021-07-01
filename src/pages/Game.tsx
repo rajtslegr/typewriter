@@ -29,15 +29,6 @@ const Game: React.FC = () => {
 
   return (
     <div className="relative flex flex-col items-center justify-center w-full pt-24 space-y-12">
-      {(gameInProgress || startedCountDown || gameFinished) && (
-        <ScoreBoard
-          timeOut={timeOut}
-          wordsCount={wordsCount}
-          errorsCount={errorsCount}
-          wpm={wpm}
-          accuracy={accuracy}
-        />
-      )}
       {(gameInProgress || startedCountDown) && (
         <Word
           outgoingChars={outgoingChars}
@@ -59,6 +50,15 @@ const Game: React.FC = () => {
             Dashboard
           </Button>
         </div>
+      )}
+      {(gameInProgress || startedCountDown || gameFinished) && (
+        <ScoreBoard
+          timeOut={timeOut}
+          wordsCount={wordsCount}
+          errorsCount={errorsCount}
+          wpm={wpm}
+          accuracy={accuracy}
+        />
       )}
       {postError && <Error>{postError}</Error>}
       {startedCountDown && <CountDown countDown={countDown} />}
