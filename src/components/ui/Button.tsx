@@ -15,7 +15,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(
 
     return (
       <button
-        className={`${theme[variant]} px-2 py transition rounded border hover:shadow disabled:cursor-not-allowed`}
+        className={`${theme[variant]} px-2 py transition rounded border hover:shadow disabled:cursor-not-allowed uppercase`}
         ref={ref}
         {...props}
       >

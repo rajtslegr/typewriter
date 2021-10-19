@@ -1,43 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import React from 'react';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Input from '../components/ui/Input';
-import { useAuth } from '../contexts/Auth';
-import { upsertProfile } from '../lib/supabase';
-import { IProfileInputs } from '../types/types';
+import useProfile from '../hooks/useProfile';
 
 const Profile: React.FC = () => {
-  const { user, profile, refreshProfile } = useAuth();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const {
+    user,
+    profile,
+    loading,
+    error,
+    errors,
     register,
     handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm();
-
-  useEffect(() => {
-    setValue('username', profile?.username);
-    setLoading(false);
-  }, [profile, setValue]);
-
-  const updateProfile: SubmitHandler<IProfileInputs> = async ({
-    username,
-  }): Promise<void> => {
-    try {
-      setError('');
-      setLoading(true);
-      await upsertProfile(user?.id, username);
-    } catch (error) {
-      setError(error.message);
-      setValue('username', profile?.username);
-    } finally {
-      refreshProfile();
-      setLoading(false);
-    }
-  };
+    updateProfile,
+  } = useProfile();
 
   return (
     <div className="flex flex-col items-center justify-center w-full">

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { User } from '@supabase/supabase-js';
 import React, {
   ReactElement,
@@ -24,7 +23,7 @@ const AuthContext = React.createContext<IAuthContext>({} as IAuthContext);
 
 const AuthProvider: React.FC<Props> = ({ children }) => {
   const [user, setUser] = useState<User | null>();
-  const [profile, setProfile] = useState<any | null>();
+  const [profile, setProfile] = useState<IAuthContext['profile'] | null>();
   const [loading, setLoading] = useState(true);
 
   const refreshProfile = useCallback(async (): Promise<void> => {

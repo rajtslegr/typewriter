@@ -5,14 +5,14 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import ProtectedRoute from './components/ProtectedRoute';
-import Layout from './components/ui/Layout';
-import AuthProvider from './contexts/Auth';
-import Dashboard from './pages/Dashboard';
-import Game from './pages/Game';
-import Profile from './pages/Profile';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import ProtectedRoute from '../components/ProtectedRoute';
+import Layout from '../components/ui/Layout';
+import AuthProvider from '../contexts/Auth';
+import Dashboard from './Dashboard';
+import Game from './Game';
+import Profile from './Profile';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 const App: React.FC = () => {
   return (

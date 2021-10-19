@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-import * as React from 'react';
+import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 import { useAuth } from '../contexts/Auth';
 
 interface PrivateRouteProps extends RouteProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  component: any;
+  component: React.FC<any>;
 }
 
 const ProtectedRoute = (props: PrivateRouteProps) => {

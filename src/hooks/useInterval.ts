@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const noop = (): void => {};
+const noop = (): void => undefined;
 
 const useInterval = (
   callback: () => void,

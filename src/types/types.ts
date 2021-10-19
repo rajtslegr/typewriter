@@ -1,14 +1,14 @@
-export interface IAuthInputs {
+export interface AuthForm {
   email: string;
   password: string;
 }
 
-export interface IProfileInputs {
+export interface ProfileForm {
   email: string;
   username: string;
 }
 
-export interface IGameProps {
+export interface GameProps {
   startedCountDown: boolean;
   countDown: number;
   gameInProgress: boolean;

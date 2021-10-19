@@ -1,36 +1,12 @@
-import React, { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Input from '../components/ui/Input';
-import { useAuth } from '../contexts/Auth';
-import { supabase } from '../lib/supabase';
-import { IAuthInputs } from '../types/types';
+import useSignIn from '../hooks/useSignIn';
 
-const SignIn: React.FC = () => {
-  const { user } = useAuth();
-  const history = useHistory();
-  const [error, setError] = useState<string | null>(null);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  if (user) {
-    history.push('/');
-  }
-
-  const onSubmit: SubmitHandler<IAuthInputs> = async (data): Promise<void> => {
-    const { error } = await supabase.auth.signIn(data);
-
-    if (error) {
-      setError(error.message);
-    } else {
-      history.push('/');
-    }
-  };
+const SignIn = () => {
+  const { error, register, handleSubmit, errors, onSubmit } = useSignIn();
 
   return (
     <div className="flex flex-col items-center justify-center w-full">

@@ -1,36 +1,15 @@
 import { format } from 'date-fns';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Loader from '../components/ui/Loader';
 import { Table, TBody, Td, Th, THead } from '../components/ui/Table';
-import { useAuth } from '../contexts/Auth';
-import { getGames } from '../lib/supabase';
-import { definitions } from '../types/supabase';
+import useGamesDash from '../hooks/useGameDash';
 
 const Dashboard: React.FC = () => {
-  const { user, profile } = useAuth();
-  const [games, setGames] = useState<definitions['games'][] | undefined | null>(
-    null,
-  );
-  const [error, setError] = useState<string | null>(null);
-  const [page, setPage] = useState<number>(0);
-
   const history = useHistory();
-
-  useEffect(() => {
-    getGamesDash();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, page]);
-
-  const getGamesDash = async (): Promise<void> => {
-    try {
-      setGames(await getGames(user, page));
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  const { profile, page, setPage, games, error } = useGamesDash();
 
   if (!games && !error) {
     return <Loader />;
