@@ -1,11 +1,11 @@
-import React, { ComponentProps, forwardRef } from 'react';
+import React, { ComponentProps, forwardRef, ReactNode } from 'react';
 
-interface Props extends ComponentProps<'button'> {
-  children: React.ReactNode;
+interface ButtonProps extends ComponentProps<'button'> {
+  children: ReactNode;
   variant: 'light' | 'dark';
 }
 
-const Button = forwardRef<HTMLButtonElement, Props>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, variant, ...props }, ref) => {
     const theme = {
       light:

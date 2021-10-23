@@ -46,7 +46,7 @@ const Game: React.FC = () => {
           >
             {!gameFinished ? 'Start game' : 'Play again'}
           </Button>
-          <Button onClick={() => history.push('/dashboard')} variant="dark">
+          <Button onClick={() => history.push('/')} variant="dark">
             Dashboard
           </Button>
         </div>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Header from './Header';
 
-interface IProps {
-  children: JSX.Element | JSX.Element[];
+interface LayoutProps {
+  children: ReactNode;
 }
 
-const Layout: React.FC<IProps> = ({ children }) => (
+const Layout: React.FC<LayoutProps> = ({ children }) => (
   <div className="flex flex-col items-center min-h-screen">
     <Header />
     <div className="flex-auto w-full">

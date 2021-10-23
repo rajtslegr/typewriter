@@ -15,14 +15,18 @@ const useInterval = (
 
   useEffect(() => {
     if (!immediate) return;
+
     if (delay === null || delay === false) return;
+
     savedCallback.current();
   }, [delay, immediate]);
 
   useEffect(() => {
     if (delay === null || delay === false) return undefined;
+
     const tick = (): void => savedCallback.current();
     const id = setInterval(tick, delay);
+
     return () => clearInterval(id);
   }, [delay]);
 };

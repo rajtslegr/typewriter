@@ -13,17 +13,17 @@ interface Props {
   children: ReactElement;
 }
 
-interface IAuthContext {
+interface AuthContext {
   refreshProfile: () => void;
   user: User | null | undefined;
   profile: definitions['profiles'] | null | undefined;
 }
 
-const AuthContext = React.createContext<IAuthContext>({} as IAuthContext);
+const AuthContext = React.createContext<AuthContext>({} as AuthContext);
 
 const AuthProvider: React.FC<Props> = ({ children }) => {
   const [user, setUser] = useState<User | null>();
-  const [profile, setProfile] = useState<IAuthContext['profile'] | null>();
+  const [profile, setProfile] = useState<AuthContext['profile'] | null>();
   const [loading, setLoading] = useState(true);
 
   const refreshProfile = useCallback(async (): Promise<void> => {
@@ -62,7 +62,7 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
   );
 };
 
-export const useAuth = (): IAuthContext => {
+export const useAuth = (): AuthContext => {
   return useContext(AuthContext);
 };
 

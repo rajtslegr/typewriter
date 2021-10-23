@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-interface Props {
-  children: (JSX.Element | JSX.Element[]) | (number | string | string[]);
+interface TableProps {
+  children: ReactNode | (number | string | string[]);
 }
 
-export const Table: React.FC<Props> = ({ children }) => (
+export const Table: React.FC<TableProps> = ({ children }) => (
   <table className="min-w-full divide-y divide-gray-500">{children}</table>
 );
 
-export const THead: React.FC<Props> = ({ children }) => (
+export const THead: React.FC<TableProps> = ({ children }) => (
   <thead className="bg-gray-900">{children}</thead>
 );
 
-export const TBody: React.FC<Props> = ({ children }) => (
+export const TBody: React.FC<TableProps> = ({ children }) => (
   <tbody className="bg-gray-700 divide-y divide-gray-500">{children}</tbody>
 );
 
-export const Th: React.FC<Props> = ({ children }) => (
+export const Th: React.FC<TableProps> = ({ children }) => (
   <th
     scope="col"
     className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-200 uppercase"
@@ -25,6 +25,6 @@ export const Th: React.FC<Props> = ({ children }) => (
   </th>
 );
 
-export const Td: React.FC<Props> = ({ children }) => (
+export const Td: React.FC<TableProps> = ({ children }) => (
   <td className="px-6 py-2 whitespace-nowrap">{children}</td>
 );

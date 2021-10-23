@@ -1,10 +1,10 @@
 import React, { ComponentProps, forwardRef } from 'react';
 
-interface Props extends ComponentProps<'input'> {
+interface InputProps extends ComponentProps<'input'> {
   label: string;
 }
 
-const Input = forwardRef<HTMLInputElement, Props>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, type = 'text', ...props }, ref) => {
     return (
       <label>

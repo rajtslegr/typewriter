@@ -26,9 +26,11 @@ const useProfile = () => {
     try {
       setError('');
       setLoading(true);
+
       await upsertProfile(user?.id, username);
     } catch (error) {
       const err = error as Error;
+
       setError(err.message);
       setValue('username', profile?.username);
     } finally {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface Props {
+interface ScoreBoardProps {
   timeOut: number;
   wordsCount: number;
   errorsCount: number;
@@ -8,7 +8,7 @@ interface Props {
   accuracy: string;
 }
 
-const ScoreBoard: React.FC<Props> = ({
+const ScoreBoard: React.FC<ScoreBoardProps> = ({
   timeOut,
   wordsCount,
   errorsCount,

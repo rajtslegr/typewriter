@@ -1,13 +1,13 @@
 import React from 'react';
 
-interface Props {
+interface WordProps {
   outgoingChars: string;
   currentChar: string;
   incomingChars: string;
   nextWord: string;
 }
 
-const Word: React.FC<Props> = ({
+const Word: React.FC<WordProps> = ({
   outgoingChars,
   currentChar,
   incomingChars,

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-interface Props {
-  children: React.ReactNode;
+interface ErrorProps {
+  children: ReactNode;
 }
 
-const Error: React.FC<Props> = ({ children }) => {
+const Error: React.FC<ErrorProps> = ({ children }) => {
   return <p className="text-red-500">{children}</p>;
 };
 

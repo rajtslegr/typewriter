@@ -2,13 +2,14 @@ import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 import { useAuth } from '../contexts/Auth';
 
-interface PrivateRouteProps extends RouteProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface ProtectedRouteProps extends RouteProps {
   component: React.FC<any>;
 }
 
-const ProtectedRoute = (props: PrivateRouteProps) => {
-  const { component: Component, ...rest } = props;
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
+  component: Component,
+  ...rest
+}) => {
   const { user } = useAuth();
 
   return (

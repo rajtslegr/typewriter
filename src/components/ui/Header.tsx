@@ -27,7 +27,7 @@ const Header: React.FC = () => {
       <div className="space-x-2">
         {user ? (
           <>
-            <Button onClick={() => history.push('/dashboard')} variant="light">
+            <Button onClick={() => history.push('/')} variant="light">
               Dashboard
             </Button>
             <Button onClick={() => history.push('/profile')} variant="light">

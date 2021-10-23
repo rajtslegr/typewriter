@@ -5,7 +5,7 @@ import { definitions } from '../types/supabase';
 
 const useGamesDash = () => {
   const { user, profile } = useAuth();
-  const [page, setPage] = useState<number>(0);
+  const [page, setPage] = useState(0);
   const [games, setGames] = useState<definitions['games'][] | undefined | null>(
     null,
   );
