@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/Auth';
 import { supabase } from '../../lib/supabase';
 import Button from './Button';
 
 const Header: React.FC = () => {
   const { user, profile } = useAuth();
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const handleSignOut = async (): Promise<void> => {
     await supabase.auth.signOut();
-    history.push('/signin');
+    navigate('/signin');
   };
 
   return (
@@ -27,10 +27,10 @@ const Header: React.FC = () => {
       <div className="space-x-2">
         {user ? (
           <>
-            <Button onClick={() => history.push('/')} variant="light">
+            <Button onClick={() => navigate('/')} variant="light">
               Dashboard
             </Button>
-            <Button onClick={() => history.push('/profile')} variant="light">
+            <Button onClick={() => navigate('/profile')} variant="light">
               {profile?.username || user?.email}
             </Button>
             <Button onClick={handleSignOut} type="submit" variant="light">
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
           </>
         ) : (
           <Button
-            onClick={() => history.push('/game')}
+            onClick={() => navigate('/game')}
             type="button"
             variant="light"
           >
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
         )}
         {!user && location.pathname !== '/signin' && (
           <Button
-            onClick={() => history.push('/signin')}
+            onClick={() => navigate('/signin')}
             type="submit"
             variant="light"
           >

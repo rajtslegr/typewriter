@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Loader from '../components/ui/Loader';
@@ -8,7 +8,7 @@ import { Table, TBody, Td, Th, THead } from '../components/ui/Table';
 import useGamesDash from '../hooks/useGameDash';
 
 const Dashboard: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { profile, page, setPage, games, error } = useGamesDash();
 
   if (!games && !error) {
@@ -21,7 +21,7 @@ const Dashboard: React.FC = () => {
         <h1 className="text-4xl">
           Welcome{profile?.username && <>, {profile?.username}</>}!
         </h1>
-        <Button onClick={() => history.push('/game')} variant="dark">
+        <Button onClick={() => navigate('/game')} variant="dark">
           Let&apos;s play!
         </Button>
       </div>

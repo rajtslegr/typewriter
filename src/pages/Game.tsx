@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CountDown from '../components/game/CountDown';
 import ScoreBoard from '../components/game/ScoreBoard';
 import Word from '../components/game/Word';
@@ -25,7 +25,7 @@ const Game: React.FC = () => {
     postError,
     preparePlayGround,
   } = useGame();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <div className="relative flex flex-col items-center justify-center w-full pt-24 space-y-12">
@@ -46,7 +46,7 @@ const Game: React.FC = () => {
           >
             {!gameFinished ? 'Start game' : 'Play again'}
           </Button>
-          <Button onClick={() => history.push('/')} variant="dark">
+          <Button onClick={() => navigate('/')} variant="dark">
             Dashboard
           </Button>
         </div>
