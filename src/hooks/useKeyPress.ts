@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useKeyPress = (
-  callback: (_key: string) => void,
-): string | null | undefined => {
+const useKeyPress = (callback: (_key: string) => void): void => {
   const [keyPressed, setKeyPressed] = useState<string | null>();
 
   useEffect(() => {
@@ -25,8 +23,6 @@ const useKeyPress = (
       window.removeEventListener('keyup', upHandler);
     };
   });
-
-  return keyPressed;
 };
 
 export default useKeyPress;

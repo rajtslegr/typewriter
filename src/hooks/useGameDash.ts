@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+
 import { useAuth } from '../contexts/Auth';
 import { getGames } from '../lib/supabase';
 import { definitions } from '../types/supabase';
@@ -14,8 +15,8 @@ const useGamesDash = () => {
   const getGamesDash = useCallback(async (): Promise<void> => {
     try {
       setGames(await getGames(user, page));
-    } catch (error) {
-      const err = error as Error;
+    } catch (e) {
+      const err = e as Error;
       setError(err.message);
     }
   }, [page, user]);

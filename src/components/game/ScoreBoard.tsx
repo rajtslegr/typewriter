@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ScoreBoardProps {
   timeOut: number;
   wordsCount: number;
@@ -15,7 +13,7 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({
   wpm,
   accuracy,
 }) => (
-  <div className="flex flex-col w-full p-8 text-2xl text-gray-300 border rounded md:items-center md:flex-row border-brand-500 justify-evenly">
+  <div className="flex flex-col justify-evenly p-8 w-full text-2xl text-gray-300 rounded border border-brand-500 md:flex-row md:items-center">
     <div>Time Left: {timeOut}</div>
     <div>Words: {wordsCount}</div>
     <div>WPM: {wpm}</div>

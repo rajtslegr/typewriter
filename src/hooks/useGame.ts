@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { useAuth } from '../contexts/Auth';
 import { insertGame } from '../lib/supabase';
 import { GameProps } from '../types/types';
@@ -28,6 +29,16 @@ const useGame = (): GameProps => {
   const [accuracy, setAccuracy] = useState('100');
 
   const [postError, setPostError] = useState<string | null>('');
+
+  const startGame = (): void => {
+    setStartTime(new Date().getTime());
+    setGameInProgress(true);
+  };
+
+  const stopGame = (): void => {
+    setGameInProgress(false);
+    setGameFinished(true);
+  };
 
   useInterval(
     async () => {
@@ -89,16 +100,6 @@ const useGame = (): GameProps => {
     setCurrentChar(generatedWord.charAt(0));
   };
 
-  const startGame = (): void => {
-    setStartTime(new Date().getTime());
-    setGameInProgress(true);
-  };
-
-  const stopGame = (): void => {
-    setGameInProgress(false);
-    setGameFinished(true);
-  };
-
   useEffect(() => {
     if (correctChars > 0 && typedChars > 0) {
       setAccuracy(((correctChars / typedChars) * 100).toFixed(1));
@@ -111,7 +112,7 @@ const useGame = (): GameProps => {
     }
 
     if (!gameInProgress) {
-      return null;
+      return;
     }
 
     setTypedChars(typedChars + 1);
@@ -139,9 +140,8 @@ const useGame = (): GameProps => {
 
       setIncomingChars(updatedIncomingChars);
       setCorrectChars(correctChars + 1);
-    } else {
-      setErrorsCount(errorsCount + 1);
     }
+    setErrorsCount(errorsCount + 1);
   });
 
   return {

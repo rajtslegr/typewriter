@@ -1,5 +1,5 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import CountDown from '../components/game/CountDown';
 import ScoreBoard from '../components/game/ScoreBoard';
 import Word from '../components/game/Word';
@@ -28,7 +28,7 @@ const Game: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full pt-24 space-y-12">
+    <div className="flex relative flex-col justify-center items-center pt-24 space-y-12 w-full">
       {(gameInProgress || startedCountDown) && (
         <Word
           outgoingChars={outgoingChars}

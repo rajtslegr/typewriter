@@ -1,11 +1,14 @@
-import { User } from '@supabase/supabase-js';
-import React, {
+import {
+  createContext,
   ReactElement,
   useCallback,
   useContext,
   useEffect,
   useState,
 } from 'react';
+
+import { User } from '@supabase/supabase-js';
+
 import { getProfile, supabase } from '../lib/supabase';
 import { definitions } from '../types/supabase';
 
@@ -13,17 +16,17 @@ interface Props {
   children: ReactElement;
 }
 
-interface AuthContext {
+interface AuthContextType {
   refreshProfile: () => void;
   user: User | null | undefined;
   profile: definitions['profiles'] | null | undefined;
 }
 
-const AuthContext = React.createContext<AuthContext>({} as AuthContext);
+const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 
 const AuthProvider: React.FC<Props> = ({ children }) => {
   const [user, setUser] = useState<User | null>();
-  const [profile, setProfile] = useState<AuthContext['profile'] | null>();
+  const [profile, setProfile] = useState<AuthContextType['profile'] | null>();
   const [loading, setLoading] = useState(true);
 
   const refreshProfile = useCallback(async (): Promise<void> => {
@@ -31,9 +34,9 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
   }, [user]);
 
   useEffect(() => {
-    const session = supabase.auth.session();
+    const userSession = supabase.auth.session();
 
-    setUser(session?.user ?? null);
+    setUser(userSession?.user ?? null);
     refreshProfile();
     setLoading(false);
 
@@ -62,7 +65,7 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
   );
 };
 
-export const useAuth = (): AuthContext => {
+export const useAuth = (): AuthContextType => {
   return useContext(AuthContext);
 };
 

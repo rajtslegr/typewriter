@@ -1,4 +1,4 @@
-import React, { ComponentProps, forwardRef, ReactNode } from 'react';
+import { ComponentProps, forwardRef, ReactNode } from 'react';
 
 interface ButtonProps extends ComponentProps<'button'> {
   children: ReactNode;

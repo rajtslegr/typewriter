@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Loader from '../components/ui/Loader';
@@ -16,7 +16,7 @@ const Dashboard: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col w-full space-y-4">
+    <div className="flex flex-col space-y-4 w-full">
       <div className="flex flex-row justify-between">
         <h1 className="text-4xl">
           Welcome{profile?.username && <>, {profile?.username}</>}!

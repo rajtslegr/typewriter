@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
+
 import { useAuth } from '../contexts/Auth';
 import { supabase } from '../lib/supabase';
-import { AuthForm } from '../types/types';
 
 const useSignUp = () => {
   const { user } = useAuth();
@@ -19,11 +20,11 @@ const useSignUp = () => {
     navigate('/');
   }
 
-  const onSubmit: SubmitHandler<AuthForm> = async (data): Promise<void> => {
-    const { error } = await supabase.auth.signUp(data);
+  const onSubmit: SubmitHandler<FieldValues> = async (data): Promise<void> => {
+    const { error: err } = await supabase.auth.signUp(data);
 
-    if (error) {
-      setError(error.message);
+    if (err) {
+      setError(err.message);
     } else {
       navigate('/');
     }

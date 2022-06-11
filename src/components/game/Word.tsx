@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface WordProps {
   outgoingChars: string;
   currentChar: string;
@@ -13,7 +11,7 @@ const Word: React.FC<WordProps> = ({
   incomingChars,
   nextWord,
 }) => (
-  <div className="flex flex-row items-baseline justify-center w-full m-16">
+  <div className="flex flex-row justify-center items-baseline m-16 w-full">
     <div className="text-7xl">
       <span className="text-green-500">{outgoingChars}</span>
       <span className="text-brand-500">{currentChar}</span>

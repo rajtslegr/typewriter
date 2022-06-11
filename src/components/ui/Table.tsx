@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface TableProps {
   children: ReactNode | (number | string | string[]);
@@ -19,12 +19,12 @@ export const TBody: React.FC<TableProps> = ({ children }) => (
 export const Th: React.FC<TableProps> = ({ children }) => (
   <th
     scope="col"
-    className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-200 uppercase"
+    className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase"
   >
     {children}
   </th>
 );
 
 export const Td: React.FC<TableProps> = ({ children }) => (
-  <td className="px-6 py-2 whitespace-nowrap">{children}</td>
+  <td className="py-2 px-6 whitespace-nowrap">{children}</td>
 );

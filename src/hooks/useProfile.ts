@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+
 import { useAuth } from '../contexts/Auth';
 import { upsertProfile } from '../lib/supabase';
-import { ProfileForm } from '../types/types';
 
 const useProfile = () => {
   const { user, profile, refreshProfile } = useAuth();
@@ -20,7 +21,7 @@ const useProfile = () => {
     setLoading(false);
   }, [profile, setValue]);
 
-  const updateProfile: SubmitHandler<ProfileForm> = async ({
+  const updateProfile: SubmitHandler<FieldValues> = async ({
     username,
   }): Promise<void> => {
     try {
@@ -28,8 +29,8 @@ const useProfile = () => {
       setLoading(true);
 
       await upsertProfile(user?.id, username);
-    } catch (error) {
-      const err = error as Error;
+    } catch (e) {
+      const err = e as Error;
 
       setError(err.message);
       setValue('username', profile?.username);

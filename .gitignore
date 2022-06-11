@@ -6,3 +6,4 @@ dist-ssr
 **/.history
 .env*
 !.env.example
+.eslintcache

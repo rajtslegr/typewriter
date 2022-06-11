@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '../components/ui/Button';
 import Error from '../components/ui/Error';
 import Input from '../components/ui/Input';
@@ -17,10 +16,10 @@ const Profile: React.FC = () => {
   } = useProfile();
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
+    <div className="flex flex-col justify-center items-center w-full">
       <form
         onSubmit={handleSubmit(updateProfile)}
-        className="flex flex-col w-full space-y-4 md:w-1/3"
+        className="flex flex-col space-y-4 w-full md:w-1/3"
       >
         <Input label="Email" value={user?.email} disabled></Input>
         <Input

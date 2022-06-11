@@ -1,4 +1,5 @@
 import { createClient, User } from '@supabase/supabase-js';
+
 import { definitions } from '../types/supabase';
 
 export const supabase = createClient(
@@ -19,6 +20,7 @@ export const getProfile = async (
 
     return data;
   }
+  return undefined;
 };
 
 export const upsertProfile = async (
@@ -60,6 +62,7 @@ export const getGames = async (
 
     return data;
   }
+  return undefined;
 };
 
 export const insertGame = async (

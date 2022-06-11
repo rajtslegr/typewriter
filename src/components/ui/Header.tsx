@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 import { useAuth } from '../../contexts/Auth';
 import { supabase } from '../../lib/supabase';
 import Button from './Button';
@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="flex flex-row items-center justify-between w-screen h-12 p-2 text-black bg-brand-500">
+    <header className="flex flex-row justify-between items-center p-2 w-screen h-12 text-black bg-brand-500">
       <Link to="/">
         <div className="items-center italic font-bold text-center">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800">
