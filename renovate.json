@@ -1,0 +1,6 @@
+{
+  "commitMessagePrefix": "⬆️ ",
+  "extends": [
+    "config:base"
+  ]
+}
