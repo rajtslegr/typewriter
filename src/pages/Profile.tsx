@@ -34,7 +34,7 @@ const Profile: React.FC = () => {
           type="text"
           label="Username"
         />
-        <Error>{errors.username?.message || error}</Error>
+        <Error>{errors.username?.message?.toString() || error}</Error>
         <Button
           onClick={() => handleSubmit}
           type="submit"
