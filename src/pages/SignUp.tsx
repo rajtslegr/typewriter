@@ -21,7 +21,7 @@ const SignUp: React.FC = () => {
           type="email"
           label="Email"
         ></Input>
-        <Error>{errors.email?.message}</Error>
+        <Error>{errors.email?.message?.toString()}</Error>
         <Input
           {...register('password', {
             required: { value: true, message: 'Password is required' },
@@ -33,7 +33,7 @@ const SignUp: React.FC = () => {
           type="password"
           label="Password"
         />
-        <Error>{errors.password?.message || error}</Error>
+        <Error>{errors.password?.message?.toString() || error}</Error>
         <Button onClick={() => handleSubmit} type="submit" variant="dark">
           Sing Up
         </Button>
