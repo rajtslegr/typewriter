@@ -7,7 +7,7 @@ specifiers:
   '@faker-js/faker': 7.3.0
   '@supabase/supabase-js': 1.35.4
   '@tailwindcss/forms': 0.5.2
-  '@tailwindcss/typography': 0.5.2
+  '@tailwindcss/typography': 0.5.3
   '@types/node': 17.0.45
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
@@ -42,7 +42,7 @@ dependencies:
   '@faker-js/faker': 7.3.0
   '@supabase/supabase-js': 1.35.4
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.4
-  '@tailwindcss/typography': 0.5.2_tailwindcss@3.1.4
+  '@tailwindcss/typography': 0.5.3_tailwindcss@3.1.4
   autoprefixer: 10.4.7_postcss@8.4.14
   date-fns: 2.28.0
   eslint-config-prettier: 8.5.0_eslint@8.19.0
@@ -1483,10 +1483,10 @@ packages:
       tailwindcss: 3.1.4
     dev: false
 
-  /@tailwindcss/typography/0.5.2_tailwindcss@3.1.4:
-    resolution: {integrity: sha512-coq8DBABRPFcVhVIk6IbKyyHUt7YTEC/C992tatFB+yEx5WGBQrCgsSFjxHUr8AWXphWckadVJbominEduYBqw==}
+  /@tailwindcss/typography/0.5.3_tailwindcss@3.1.4:
+    resolution: {integrity: sha512-Cn4MufL/xiTh2Npw26xiL7gP3GFkJH+zWM8DAm/NNEr4gF5N9D6gY9zMNNQUu27m8g0IIk665BUuoU92wVUBkA==}
     peerDependencies:
-      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
+      tailwindcss: '>=3.0.0 || insiders'
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
