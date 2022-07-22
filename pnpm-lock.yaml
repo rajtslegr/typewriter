@@ -15,7 +15,7 @@ specifiers:
   '@typescript-eslint/parser': 5.30.7
   '@vitejs/plugin-react': 2.0.0
   autoprefixer: 10.4.7
-  date-fns: 2.28.0
+  date-fns: 2.29.0
   eslint: 8.20.0
   eslint-config-airbnb-base: 15.0.0
   eslint-config-airbnb-typescript: 17.0.0
@@ -44,7 +44,7 @@ dependencies:
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.6
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
   autoprefixer: 10.4.7_postcss@8.4.14
-  date-fns: 2.28.0
+  date-fns: 2.29.0
   eslint-config-prettier: 8.5.0_eslint@8.20.0
   postcss: 8.4.14
   react: 18.2.0
@@ -2028,8 +2028,8 @@ packages:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
 
-  /date-fns/2.28.0:
-    resolution: {integrity: sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==}
+  /date-fns/2.29.0:
+    resolution: {integrity: sha512-itxguwZHwBR0ats0VpYAVyY65dq1DEsDsfsGxFG11Rrho+zQJTCcjKbxQ7LiU5M2omLJ272bnn63yYFk/YGuVw==}
     engines: {node: '>=0.11'}
     dev: false
 
