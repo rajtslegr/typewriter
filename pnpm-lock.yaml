@@ -13,7 +13,7 @@ specifiers:
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.33.0
   '@typescript-eslint/parser': 5.33.0
-  '@vitejs/plugin-react': 2.0.0
+  '@vitejs/plugin-react': 2.0.1
   autoprefixer: 10.4.8
   date-fns: 2.29.1
   eslint: 8.21.0
@@ -63,7 +63,7 @@ devDependencies:
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.33.0_njno5y7ry2l2lcmiu4tywxkwnq
   '@typescript-eslint/parser': 5.33.0_qugx7qdu5zevzvxaiqyxfiwquq
-  '@vitejs/plugin-react': 2.0.0_vite@3.0.6
+  '@vitejs/plugin-react': 2.0.1_vite@3.0.6
   eslint: 8.21.0
   eslint-config-airbnb-base: 15.0.0_jatgrcxl4x7ywe7ak6cnjca2ae
   eslint-config-airbnb-typescript: 17.0.0_2p33354vws2q7hfbt5tyy4qhyy
@@ -1031,7 +1031,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.10
-      '@babel/plugin-transform-react-jsx': 7.18.6_@babel+core@7.18.10
+      '@babel/plugin-transform-react-jsx': 7.18.10_@babel+core@7.18.10
     dev: true
 
   /@babel/plugin-transform-react-jsx-self/7.18.6_@babel+core@7.18.10:
@@ -1054,8 +1054,8 @@ packages:
       '@babel/helper-plugin-utils': 7.18.9
     dev: true
 
-  /@babel/plugin-transform-react-jsx/7.18.6_@babel+core@7.18.10:
-    resolution: {integrity: sha512-Mz7xMPxoy9kPS/JScj6fJs03TZ/fZ1dJPlMjRAgTaxaS0fUBk8FV/A2rRgfPsVCZqALNwMexD+0Uaf5zlcKPpw==}
+  /@babel/plugin-transform-react-jsx/7.18.10_@babel+core@7.18.10:
+    resolution: {integrity: sha512-gCy7Iikrpu3IZjYZolFE4M1Sm+nrh1/6za2Ewj77Z+XirT4TsbJcvOFOyF+fRPwU6AKKK136CZxx6L8AbSFG6A==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -1669,14 +1669,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-react/2.0.0_vite@3.0.6:
-    resolution: {integrity: sha512-zHkRR+X4zqEPNBbKV2FvWSxK7Q6crjMBVIAYroSU8Nbb4M3E5x4qOiLoqJBHtXgr27kfednXjkwr3lr8jS6Wrw==}
-    engines: {node: '>=14.18.0'}
+  /@vitejs/plugin-react/2.0.1_vite@3.0.6:
+    resolution: {integrity: sha512-uINzNHmjrbunlFtyVkST6lY1ewSfz/XwLufG0PIqvLGnpk2nOIOa/1CACTDNcKi1/RwaCzJLmsXwm1NsUVV/NA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
     dependencies:
       '@babel/core': 7.18.10
-      '@babel/plugin-transform-react-jsx': 7.18.6_@babel+core@7.18.10
+      '@babel/plugin-transform-react-jsx': 7.18.10_@babel+core@7.18.10
       '@babel/plugin-transform-react-jsx-development': 7.18.6_@babel+core@7.18.10
       '@babel/plugin-transform-react-jsx-self': 7.18.6_@babel+core@7.18.10
       '@babel/plugin-transform-react-jsx-source': 7.18.6_@babel+core@7.18.10
