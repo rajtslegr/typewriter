@@ -4,7 +4,7 @@ specifiers:
   '@babel/core': 7.18.13
   '@babel/preset-env': 7.18.10
   '@babel/preset-typescript': 7.18.6
-  '@faker-js/faker': 7.4.0
+  '@faker-js/faker': 7.5.0
   '@supabase/supabase-js': 1.35.6
   '@tailwindcss/forms': 0.5.2
   '@tailwindcss/typography': 0.5.4
@@ -39,7 +39,7 @@ specifiers:
   vite: 3.0.9
 
 dependencies:
-  '@faker-js/faker': 7.4.0
+  '@faker-js/faker': 7.5.0
   '@supabase/supabase-js': 1.35.6
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.8
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.8
@@ -1363,8 +1363,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@faker-js/faker/7.4.0:
-    resolution: {integrity: sha512-xDd3Tvkt2jgkx1LkuwwxpNBy/Oe+LkZBTwkgEFTiWpVSZgQ5sc/LenbHKRHbFl0dq/KFeeq/szyyPtpJRKY0fg==}
+  /@faker-js/faker/7.5.0:
+    resolution: {integrity: sha512-8wNUCCUHvfvI0gQpDUho/3gPzABffnCn5um65F8dzQ86zz6dlt4+nmAA7PQUc8L+eH+9RgR/qzy5N/8kN0Ozdw==}
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     dev: false
 
