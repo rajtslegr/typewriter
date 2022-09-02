@@ -11,7 +11,7 @@
     "@faker-js/faker": "7.5.0",
     "@supabase/supabase-js": "1.35.6",
     "@tailwindcss/forms": "0.5.2",
-    "@tailwindcss/typography": "0.5.6",
+    "@tailwindcss/typography": "0.5.7",
     "autoprefixer": "10.4.8",
     "date-fns": "2.29.2",
     "eslint-config-prettier": "8.5.0",
