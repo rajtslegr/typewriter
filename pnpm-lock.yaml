@@ -14,7 +14,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.36.2
   '@typescript-eslint/parser': 5.36.2
   '@vitejs/plugin-react': 2.1.0
-  autoprefixer: 10.4.8
+  autoprefixer: 10.4.9
   date-fns: 2.29.2
   eslint: 8.23.0
   eslint-config-airbnb-base: 15.0.0
@@ -43,7 +43,7 @@ dependencies:
   '@supabase/supabase-js': 1.35.6
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.1.8
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
-  autoprefixer: 10.4.8_postcss@8.4.16
+  autoprefixer: 10.4.9_postcss@8.4.16
   date-fns: 2.29.2
   eslint-config-prettier: 8.5.0_eslint@8.23.0
   postcss: 8.4.16
@@ -1840,15 +1840,15 @@ packages:
     resolution: {integrity: sha512-eBvWn1lvIApYMhzQMsu9ciLfkBY499mFZlNqG+/9WR7PVlroQw0vG30cOQQbaKz3sCEc44TAOu2ykzqXSNnwag==}
     dev: true
 
-  /autoprefixer/10.4.8_postcss@8.4.16:
-    resolution: {integrity: sha512-75Jr6Q/XpTqEf6D2ltS5uMewJIx5irCU1oBYJrWjFenq/m12WRRrz6g15L1EIoYvPLXTbEry7rDOwrcYNj77xw==}
+  /autoprefixer/10.4.9_postcss@8.4.16:
+    resolution: {integrity: sha512-Uu67eduPEmOeA0vyJby5ghu1AAELCCNSsLAjK+lz6kYzNM5sqnBO36MqfsjhPjQF/BaJM5U/UuFYyl7PavY/wQ==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.3
-      caniuse-lite: 1.0.30001373
+      caniuse-lite: 1.0.30001397
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1931,7 +1931,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001373
+      caniuse-lite: 1.0.30001397
       electron-to-chromium: 1.4.206
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
@@ -1959,8 +1959,8 @@ packages:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
     engines: {node: '>= 6'}
 
-  /caniuse-lite/1.0.30001373:
-    resolution: {integrity: sha512-pJYArGHrPp3TUqQzFYRmP/lwJlj8RCbVe3Gd3eJQkAV8SAC6b19XS9BjMvRdvaS8RMkaTN8ZhoHP6S1y8zzwEQ==}
+  /caniuse-lite/1.0.30001397:
+    resolution: {integrity: sha512-SW9N2TbCdLf0eiNDRrrQXx2sOkaakNZbCjgNpPyMJJbiOrU5QzMIrXOVMRM1myBXTD5iTkdrtU/EguCrBocHlA==}
 
   /chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
