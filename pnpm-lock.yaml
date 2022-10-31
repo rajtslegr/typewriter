@@ -36,7 +36,7 @@ specifiers:
   react-router-dom: 6.4.2
   tailwindcss: 3.2.1
   typescript: 4.8.4
-  vite: 3.2.1
+  vite: 3.2.2
 
 dependencies:
   '@faker-js/faker': 7.6.0
@@ -63,7 +63,7 @@ devDependencies:
   '@types/react-dom': 18.0.8
   '@typescript-eslint/eslint-plugin': 5.41.0_huremdigmcnkianavgfk3x6iou
   '@typescript-eslint/parser': 5.41.0_wyqvi574yv7oiwfeinomdzmc3m
-  '@vitejs/plugin-react': 2.2.0_vite@3.2.1
+  '@vitejs/plugin-react': 2.2.0_vite@3.2.2
   eslint: 8.26.0
   eslint-config-airbnb-base: 15.0.0_mynvxvmq5qtyojffiqgev4x7mm
   eslint-config-airbnb-typescript: 17.0.0_yxexh7lkdp6zshkc5735fso3gu
@@ -76,7 +76,7 @@ devDependencies:
   eslint-plugin-unused-imports: 2.0.0_6r3xdzcxornz44qxq7pviwvbfa
   prettier: 2.7.1
   typescript: 4.8.4
-  vite: 3.2.1
+  vite: 3.2.2
 
 packages:
 
@@ -1707,7 +1707,7 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-react/2.2.0_vite@3.2.1:
+  /@vitejs/plugin-react/2.2.0_vite@3.2.2:
     resolution: {integrity: sha512-FFpefhvExd1toVRlokZgxgy2JtnBOdp4ZDsq7ldCWaqGSGn9UhWMAVm/1lxPL14JfNS5yGz+s9yFrQY6shoStA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1720,7 +1720,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.19.6
       magic-string: 0.26.7
       react-refresh: 0.14.0
-      vite: 3.2.1
+      vite: 3.2.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4023,8 +4023,8 @@ packages:
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  /vite/3.2.1:
-    resolution: {integrity: sha512-ADtMkfHuWq4tskJsri2n2FZkORO8ZyhI+zIz7zTrDAgDEtct1jdxOg3YsZBfHhKjmMoWLOSCr+64qrEDGo/DbQ==}
+  /vite/3.2.2:
+    resolution: {integrity: sha512-pLrhatFFOWO9kS19bQ658CnRYzv0WLbsPih6R+iFeEEhDOuYgYCX2rztUViMz/uy/V8cLCJvLFeiOK7RJEzHcw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
