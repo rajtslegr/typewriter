@@ -31,7 +31,7 @@ specifiers:
   prettier: 2.7.1
   react: 18.2.0
   react-dom: 18.2.0
-  react-hook-form: 7.39.2
+  react-hook-form: 7.39.3
   react-router: 6.4.3
   react-router-dom: 6.4.3
   tailwindcss: 3.2.3
@@ -49,7 +49,7 @@ dependencies:
   postcss: 8.4.19
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-hook-form: 7.39.2_react@18.2.0
+  react-hook-form: 7.39.3_react@18.2.0
   react-router: 6.4.3_react@18.2.0
   react-router-dom: 6.4.3_biqbaboplfbrettd7655fr4n2y
   tailwindcss: 3.2.3_postcss@8.4.19
@@ -3602,8 +3602,8 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-hook-form/7.39.2_react@18.2.0:
-    resolution: {integrity: sha512-rCeCa1+sIcgI9PjgGmev9bVqHCwYwhjkbsXitr+giQ/P0mf/AGwUBtCdKC1lRu7egrxbLwqO9cWNWpXW4FrsHA==}
+  /react-hook-form/7.39.3_react@18.2.0:
+    resolution: {integrity: sha512-H/vwk1vBf+TiXuyW6+hWz+zCujiDO6NqHlN5sPE/a+NGKKGK95XTM65DZz3NmEgs2M20Wka+g4uv4VD367wDBA==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
