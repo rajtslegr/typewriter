@@ -25,7 +25,7 @@ specifiers:
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-react: 7.31.10
   eslint-plugin-react-hooks: 4.6.0
-  eslint-plugin-tailwindcss: 3.6.2
+  eslint-plugin-tailwindcss: 3.7.0
   eslint-plugin-unused-imports: 2.0.0
   postcss: 8.4.19
   prettier: 2.7.1
@@ -72,7 +72,7 @@ devDependencies:
   eslint-plugin-prettier: 4.2.1_v7o5sx5x3wbs57ifz6wc4f76we
   eslint-plugin-react: 7.31.10_eslint@8.27.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.27.0
-  eslint-plugin-tailwindcss: 3.6.2
+  eslint-plugin-tailwindcss: 3.7.0
   eslint-plugin-unused-imports: 2.0.0_nlzgfrebny3tjssyl6pxqc4kfq
   prettier: 2.7.1
   typescript: 4.8.4
@@ -2641,11 +2641,11 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /eslint-plugin-tailwindcss/3.6.2:
-    resolution: {integrity: sha512-C9Ka3w6W9F5l/3ZDLnkdbqmeujc1vE+p5drjP1Z1UyxgoE1Nh4/f8oQ4XC45PrZsS0Nyv0YKXNH8/dn/FJZKsQ==}
+  /eslint-plugin-tailwindcss/3.7.0:
+    resolution: {integrity: sha512-e/Pe2jr0vbvNnDXylHoubDGwSh4Z5a4ZhZrkUKHU4MYdSUpjFSofGoMwBSU3d1TybTbo89ENCEWnl1BVAM1iuQ==}
     engines: {node: '>=12.13.0'}
     dependencies:
-      fast-glob: 3.2.11
+      fast-glob: 3.2.12
       postcss: 8.4.19
       tailwindcss: 3.2.4_postcss@8.4.19
     transitivePeerDependencies:
@@ -2795,17 +2795,6 @@ packages:
 
   /fast-diff/1.2.0:
     resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
-    dev: true
-
-  /fast-glob/3.2.11:
-    resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
-    engines: {node: '>=8.6.0'}
-    dependencies:
-      '@nodelib/fs.stat': 2.0.5
-      '@nodelib/fs.walk': 1.2.8
-      glob-parent: 5.1.2
-      merge2: 1.4.1
-      micromatch: 4.0.5
     dev: true
 
   /fast-glob/3.2.12:
